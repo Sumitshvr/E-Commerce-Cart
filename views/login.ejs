@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/login.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>Login System</title>
+</head>
+<body>
+  <body>
+    <div class="container">
+      <% if (locals.showAlerts &&  ((locals.email === "inc" && locals.email!=null ) && (locals.passwd === "inc" && locals.passwd!=null))) { %>
+        <script>
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Account does not Exist!",
+          });
+          showAlerts=False;
+        </script> 
+      <% } %>
+
+      <% if (locals.showAlerts && ((locals.passwd === "inc" && locals.passwd!=null) && typeof locals.passwd!='undefined')) { %>
+        <script>
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Invalid details !",
+          });
+          showAlerts=False;  
+        </script>
+         
+      <% } %>
+      <form action="/login" method="post" class="main">
+       
+  
+        <div class="input-boxes">
+          <h1>Login</h1>
+          <input type="text" id="Email" name="Email" placeholder="Email" required><br>
+  
+          <input type="password" id="Password passwordInput" oninput="updatePasswordText()" name="Password" placeholder="Password" required><br>
+          <div class="password-text" id="passwordText"></div>
+          <button type="Login" class="login-btn" value="Login" id="lgn">Login</button>
+        </div>
+      </form>
+      <!-- <a href="./update.html" id="forgot">Forgot Password?</a> -->
+      <form action="/Register" method="post" class="bottom">
+        <button type="Register">Register</button>
+      </form> 
+      <form action="/Forgot" method="post">
+        <button type="Forgot" style="background:none;color:black;" id="forget" >Update Password?</button>
+      </form>
+    </div>
+  </body>
+  
+      <script>
+        // Get the input element
+        var inputElement = document.querySelectorAll('input');
+
+        
+        
+    
+        // Store the original placeholder text
+        var originalPlaceholder = inputElement.placeholder;
+    
+        // Add an event listener for the keydown event
+        inputElement.addEventListener('keydown', function(event) {
+            // Check if the pressed key is Enter
+            if (event.key === 'Enter') {
+                // Clear the placeholder text
+                console.log("hey");
+                inputElement.placeholder = '';
+            }
+        });
+    
+
+        // Add an event listener for the input event to handle empty input
+        inputElement.addEventListener('input', function() {
+            if (inputElement.value === '') {
+                // Restore the original placeholder text if the input is empty
+                inputElement.placeholder = originalPlaceholder;
+            }
+        });
+  
+
+
+
+    //script for hiding password
+    function updatePasswordText() {
+      const passwordInput = document.getElementById('passwordInput');
+      const passwordText = document.getElementById('passwordText');
+
+      passwordText.textContent = passwordInput.value;
+    }
+
+
+  
+    </script>
+    
+</body>
+</html>

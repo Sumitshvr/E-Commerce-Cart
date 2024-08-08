@@ -1,0 +1,77 @@
+
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('https://i.pinimg.com/originals/3b/e8/ba/3be8ba724e3bc3c01ab91b478eae2749.gif'); 
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  :root {
+    --GraysRemix-font-family: Rocher;
+    --GraysRemix-base-palette: 9;
+    --GraysRemix-override-colors: 2 rgb(90, 290, 210);
+  }
+
+  
+
+  h1, h2 {
+    color: transparent;
+    margin-bottom: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: revealText 4s forwards;
+   
+  }
+
+  h1 {
+    animation-delay: 0.5s;
+    font-size: 4rem;
+    font-family: var(--GraysRemix-font-family);
+    font-palette: var(--GraysRemix-base-palette);
+    color: var(--GraysRemix-override-colors);
+  }
+
+  h2 {
+    animation-delay: 2s;
+  }
+
+  @keyframes revealText {
+    to {
+      color:palevioletred;
+      
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: #fff;
+    background-color: #3498db;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+  }
+
+  a:hover {
+    background-color: lightcoral;
+  }
+
+  .logout-btn{
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    background-color: purple;
+  }
+  .username{
+    position: absolute;
+    left: 5%;
+  }
+
+  
+  

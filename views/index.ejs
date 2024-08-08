@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/style.css">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Audio Vista</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
+
+    <style>
+       
+        .login-button {
+            float: right;
+            margin-right:20px; 
+            margin-left: 150px;
+            padding: 10px 20px; 
+            background-color: #f66e25; 
+            color: white; 
+            border: none;
+            border-radius: 5px; 
+            cursor: pointer;
+            transition: background-color 0.3s ease; 
+        }
+
+        .login-button:hover {
+            background-color: #0056b3; 
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        nav li {
+            margin: 0 30px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            transition: color 0.3s;
+            font-size: 14px;
+        }
+        
+        nav a:hover {
+            color: #ff6600;
+        }
+        
+        .logo img {
+            height: 60px; /* Set the desired logo height */
+            width: auto; /* Allow the width to adjust proportionally */
+        }
+        #about {
+            background-color: #f7f7f7;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        #about h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        
+        .about-content p {
+            font-family: 'Inter', sans-serif; /* Replace with your preferred font */
+            font-size: 18px;
+            margin: 20px 0;
+            text-align: justify; /* Justify the text */
+            line-height: 1.5; /* Adjust line height for better readability */
+        }
+        
+        .about-content h3 {
+            font-size: 24px;
+            margin: 20px 0;
+        }
+        
+        .team-member {
+            margin: 20px;
+            display: inline-block;
+            text-align: center;
+        }
+        
+        .team-member img {
+            max-width: 150px; /* Adjust the maximum width as needed */
+            height: 150px;
+            border-radius: 50%;
+        }
+        
+        .team-member h4 {
+            font-size: 20px;
+            margin-top: 10px;
+        }
+        
+        .team-member p {
+            font-size: 16px;
+        }
+        /* Style the sections */
+        section {
+            padding: 40px;
+            text-align: center;
+        }
+        
+        /* Style the hero section */
+        #home {
+            background-image: url('../IMAGES/parallax-image.jpg');
+            background-size: cover;
+            color: #fff;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        /* Position the header and icons */
+        header {
+            background: rgb(2,0,36);
+            background: linear-gradient(90deg, rgba(2,0,36,0.5) 100%, rgba(226,71,160,0.5) 100%, rgba(224,139,221,1) 100%);
+            color: #fff;
+            height: 100px;
+            position: fixed;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            
+        }
+        
+        .header-icons {
+            display: flex;
+            align-items: center;
+        }
+        
+        #search-button, .menu-icon {
+            background-color: #ff6600;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            margin: 0 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        /* Style search and menu buttons */
+        #search-button:hover, .menu-icon:hover {
+            background-color: #ff4500;
+        }
+        
+        
+        /* Style the "Shop Now" button */
+        .cta-button {
+            background-color: #ff6600;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .cta-button:hover {
+            background-color: #ff4500;
+        }
+        
+        /* Style the services section */
+        #services {
+            background-color: #fff;
+        }
+        
+        .service {
+            display: inline-block;
+            margin: 20px;
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+        
+        .service:hover {
+            transform: scale(1.05);
+        }
+        
+        .service img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        /* Style the about section */
+        #about {
+            background-color: #f5f5f5;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .team-member {
+            display: inline-block;
+            margin: 20px;
+            text-align: center;
+        }
+        
+        .team-member img {
+            border-radius: 50%;
+        }
+        
+        /* Style the contact section */
+        #contact {
+            background-color: #f7f7f7;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        #contact h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        
+        #contact p {
+            font-size: 18px;
+            margin: 20px 0;
+        }
+        
+        .contact-details {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px;
+        }
+        
+        .contact-info {
+            flex: 1;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .contact-info i {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #ff6600;
+        }
+        
+        .contact-info p {
+            font-size: 16px;
+            color: #666;
+        }
+        
+        .contact-info:hover {
+            transform: scale(1.05);
+        }
+        
+        #contact-form {
+            text-align: left;
+            margin: 20px;
+        }
+        
+        label, input, textarea {
+            display: block;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        button {
+            background-color: #ff6600;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: #ff4500;
+        }
+        
+        
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+        
+        html, body {
+                background-image: url('parallax-image.jpg'); 
+                background-size: cover;
+                font-family: Arial,sans-serif;
+                background-attachment: fixed;
+                background-repeat: no-repeat;
+                background-position: center;
+                margin: 0;
+                padding: 0;
+        }
+        #contact{
+            background-color: #f5f5f5;
+            background-image: url('../IMAGES/contactimage.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .search-container {
+            display: none;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        
+        #search-bar {
+            width: 200px;
+            padding: 5px;
+            border: 1px solid #ccc;
+        }
+        
+        #search-button {
+            background-color: #ff6600;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        /* Style the product container to display items in two rows */
+        .product-container {
+            display: flex;
+            flex-wrap: wrap; 
+        }
+        
+        /* Style individual product items */
+        .product {
+            flex: 0 0 calc(33.33% - 20px); 
+            margin-right: 20px; 
+            text-align: center;
+            margin-bottom: 20px; 
+        }
+        
+        /* Style the last product item in each row to remove the right margin */
+        .product:nth-child(3n) {
+            margin-right: 0;
+        }
+        
+        .product img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .product h3 {
+            margin: 10px 0;
+        }
+        
+        .product p {
+            margin: 10px 0;
+        }
+        
+        .product button {
+            background: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .product button:hover {
+            background: #0056b3;
+        }
+        
+        .product{
+            text-decoration-color: aliceblue;
+        }
+        
+        /* CSS for the search box */
+        .search-box-container {
+            display: none;
+        }
+        
+        .search-box-container.active {
+            display: block;
+        }
+        
+        
+        
+        /* Style the modal container */
+        .modal {
+            display: none; 
+            position: fixed;
+            z-index: 1; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgba(0,0,0,0.4); 
+          }
+          
+          /* Style the modal content */
+          .modal-content {
+            background-color: #000000;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; 
+          }
+          
+          /* Style the close button */
+          .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+          }
+          
+          .close:hover,
+          .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+          }
+.search-result {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.search-result img {
+    width: 100px; /* Fixed width */
+    height: 100px; /* Fixed height */
+    object-fit: cover; /* Ensure the image covers the entire space */
+    margin-right: 20px;
+}
+
+.search-result .product-info {
+    flex: 1;
+}
+
+.search-result h3 {
+    margin: 0;
+}
+
+.search-result p {
+    margin: 5px 0;
+}
+
+.search-result button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.search-result button:hover {
+    background: #0056b3;
+}
+    </style>
+</head>
+<body>
+<header>
+    <div class="logo">
+        <img src="../IMAGES/logo.jpg" height="80" width="80" alt="">
+    </div>
+    <div class="search-button" id="search-button">
+        <button onclick="toggleSearchBox()">Search</button>
+    </div>
+
+    <div class="search-box-container" id="search-box-container">
+        <input type="text" id="search-box" placeholder="Search for products">
+        <button onclick="performSearch()">Go</button>
+    </div>
+<div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Search Results</h2>
+      <ul id="results-list"></ul>
+    </div>
+  </div>
+  
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="login-button">
+        <form action="/logout" method="post">
+            <button type="submit" style="text-decoration: none; color: white;">Logout</button>
+        </form>
+       
+    </div>
+</header>
+<section id="home">
+    <!-- Parallax scrolling background -->
+    <div class="parallax"></div>
+    <h1>Welcome to Audio Vista</h1>
+     <h2><%= user %></h2>
+    <p>Discover the Best in Audio</p>
+    <a href="#services" class="cta-button">Shop Now</a>
+</section>
+<section id="services">
+    <h2>Our Services</h2>
+    <div class="service" id="online-store">
+        <img src="/IMAGES/service1.jpg" alt=""height="900"width="800">
+        <!-- Add an ID to the Online Store service for JavaScript -->
+        <h3>Online Store</h3>
+        <p>This service allows you to explore our product catalog, add items to your cart, and make a purchase.</p>
+        <form action="/openOnlineStore" method="post">    
+            <button type="submit">Open Online Store</button>
+        </form>
+        <!-- <button onclick="window.location.href = './views/online_store.html';">Open Online Store</button> -->
+
+    </div>
+    <!-- Remove the Service 1 section and its content -->
+    <div class="service">
+        <img src="/IMAGES/service2.png" alt="Service 2">
+        <h3>Product Consultation</h3>
+        <p>Our professional audio consultants provide expert advice and recommendations for your audio needs.</p>
+        <button onclick="contactEmployee()">Contact Us</button>
+    </div>
+</section>
+
+<section id="about">
+    <div class="about-content">
+        <h2>About Us</h2>
+        <p>At Audio Vista, we are passionate about delivering an unparalleled audio experience to society.
+            Our journey began with a commitment to providing not just sound but a symphony of emotions through our audio solutions.
+            We believe that high-quality audio is not just heard; it's felt, and it has the power to transform ordinary moments into
+            extraordinary ones. Our mission is clear: to enrich lives through the magic of sound. We achieve this by crafting audio products
+            with uncompromising build quality, ensuring their longevity and reliability. Every product we create is a testament to our dedication
+            to excellence and our belief that society deserves nothing but the best. What sets us apart is our unwavering commitment to innovation
+            and the pursuit of perfection. Our team of audio enthusiasts, engineers, and designers collaborates to push the boundaries of what's possible,
+            striving for audio excellence in every product we offer. As we continue our journey, we invite you to experience the difference that Audio Vista
+            can make in your life. Discover the harmony, precision, and immersive audio quality that define our brand. Join us in our pursuit of a world where
+            great audio is not just an accessory but an essential part of everyday life. Thank you for choosing Audio Vista as your partner in the pursuit of
+            audio excellence.</p>
+        <h3>Our Team</h3>
+        <div class="team-member">
+            <img src="/IMAGES/team1.jpg" alt="John Doe">
+            <h4>John Doe</h4>
+            <p>Co-Founder</p>
+        </div>
+        <div class="team-member">
+            <img src="/IMAGES/team2.jpeg" alt="Jane Smith">
+            <h4>Jane Smith</h4>
+            <p>Head of Customer Support</p>
+        </div>
+    </div>
+</section>
+<section id="contact">
+    <h2>Contact Us</h2>
+    <p>If you have any questions or inquiries, please feel free to contact us using the form below or our contact details:</p>
+
+    <div class="contact-details">
+        <div class="contact-info">
+            <i class="fas fa-map-marker-alt"></i>
+            <p><strong>Address:</strong> Krishna Rajendra Rd,Bengaluru, Karnataka 560004</p>
+        </div>
+        <div class="contact-info">
+            <i class="fas fa-envelope"></i>
+            <p><strong>Email:</strong> info@audiovista.com</p>
+        </div>
+        <div class="contact-info">
+            <i class="fas fa-phone"></i>
+            <p><strong>Phone:</strong> +918082976156</p>
+        </div>
+    </div>
+
+    <div id="contact-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required placeholder="Your Name">
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required placeholder="Your Email">
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" required placeholder="Your Message"></textarea>
+
+        <button onclick="detailsSubmit()">Submit</button>
+    </div>
+</section>
+<footer>
+    <p>&copy; 2023 Audio Vista</p>
+</footer>
+<script>
+    function detailsSubmit()
+{
+    const name=document.getElementById('name').value;
+    const email=document.getElementById('email').value;
+    const message=document.getElementById('message').value;
+    if(name && email && message){
+    Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "Thanks for filling the details",
+        footer:"We'll reach to u shortly ",
+        showConfirmButton: false,
+        timer: 1500
+      });
+    }
+    else{
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Something went wrong!",
+            footer: 'Please fill your details'
+          });
+    }
+}
+</script>
+</body>
+</html>

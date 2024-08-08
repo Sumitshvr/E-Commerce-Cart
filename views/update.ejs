@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update User Details</title>
+    <link rel="stylesheet" type="text/css" href="/update.css">
+</head>
+<body>
+    <div class="container">
+        <div class="side-bar">
+    
+        </div>
+        
+        <div class="update-form"> 
+            <div class="main-form">
+                <form action="/UpdateDetails/<%= email %>" method="post" class="input-container">
+                    <!-- <input type="text" name="email" placeholder="New Email" value="" required> -->
+                    <p>Change password for '<%= email %>' </p>
+                    <div class="passwd">
+                        <div> <input type="password" name="current_pass" placeholder="Current Password" value="" required ></div>
+                        <div> <input type="password" name="new_pass" placeholder="New Password" value="" required></div>
+                        <div> <input type="password" name="conf_new_pass" placeholder="Confirm New Password" value="" required></div>
+                    </div>  
+                    <button type="submit">Update Details</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Your existing JavaScript code for background change can be placed here if needed
+    </script>
+    
+</body>
+</html>

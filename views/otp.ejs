@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Otp Authentication</title>
+    <link rel="stylesheet" href="otp.css">
+</head>
+<body>
+    <form action="/verifyOtp/<%= email %>" method="post">
+       <p> Otp sent to '<%= email %>'</p>
+        <input type="number" name="otp" placeholder="Otp">
+        <button >Submit</button>
+         </form>
+</body>
+</html>

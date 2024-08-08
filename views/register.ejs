@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" type="text/css" href="/register.css">
+</head>
+<body>
+    <div class="container">
+        <div class="side-bar">
+    
+        </div>
+        
+        <div class="register-form"> 
+            <div class="main-form">
+    <form action="/Registered" method="post" class="input-container">
+        <div class="name">
+            <div> <input  placeholder="First Name" name="fname" type="text"  value=""  required></div>
+          <div> <input type="text" name="lname" placeholder="Last Name"  value="" required ></div>
+       
+    </div>
+        <input type="text " name="email" placeholder="Email"  value="" required>
+    <div class="usr-num">
+        <input type="text" name="username" placeholder="username"  value="" required>
+        <input type="number" name="number" placeholder="phone number"  value="" required>
+    </div>
+    <div class="passwd">
+        <div> <input type="password" name="enter_pass" placeholder="Enter Password"  value="" required ></div>
+        <div> <input type="password" name="conf_pass" placeholder="Confirm Password"  value="" required></div>
+       
+        
+        </div>  
+         <button type="Registered">Register</button>
+    </form>
+</div>
+</div>
+
+
+</div>
+    <script>
+        // Get the input element
+        var inputElement = document.querySelectorAll('input');
+
+        inputElement.forEach(function (inputElement) {
+ 
+        
+    
+        // Store the original placeholder text
+        var originalPlaceholder = inputElement.placeholder;
+    
+        // Add an event listener for the keydown event
+        inputElement.addEventListener('keydown', function(event) {
+            // Check if the pressed key is Enter
+            if (event.key === 'Enter') {
+                // Clear the placeholder text
+                console.log("hey");
+                inputElement.placeholder = '';
+            }
+        });
+    
+
+        // Add an event listener for the input event to handle empty input
+        inputElement.addEventListener('input', function() {
+            if (inputElement.value === '') {
+                // Restore the original placeholder text if the input is empty
+                inputElement.placeholder = originalPlaceholder;
+            }
+        });
+    });
+    function changeBackground() {
+    const body = document.body;
+
+    // Toggle between different time states
+    if (body.classList.contains('time-1')) {
+        body.classList.remove('time-1');
+        body.classList.add('time-2');
+    } else if (body.classList.contains('time-2')) {
+        body.classList.remove('time-2');
+        body.classList.add('time-3');
+    } else {
+        body.classList.remove('time-3');
+        body.classList.add('time-1');
+    }
+}
+
+// Change the background every 5 seconds (5000 milliseconds)
+setInterval(changeBackground, 5000);
+    </script>
+    
+</body>
+</html>
